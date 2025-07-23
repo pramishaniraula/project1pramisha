@@ -5,6 +5,10 @@
     list-style: none;
     box-sizing: border-box;
 }
+header{
+    padding: 0;
+    margin: 0;
+}
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -14,44 +18,47 @@ body {
 
 nav {
     position: fixed;
-    background: #176535;
+    background: #0b3d1e;
     height: 80px;
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
 
-label.logo {
+label.logo a {
     color: #eed70a;
-    font-size: 24px;
+    font-size: 25px;
     line-height: 80px;
-    padding: 0 100px;
+    padding: 20px;
     font-weight: bold;
+}
+label.logo a:hover{
+    background-color: transparent;
 }
 
 /* Navbar */
 nav ul {
     float: right;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 
 nav ul li {
     display: inline-block;
     line-height: 80px;
-    margin: 0 5px;
+    margin: 0;
 }
 
 nav ul li a {
     color: rgb(197, 255, 126);
-    font-size: 15px;
-    padding: 7px 13px;
-    border-radius: 3px;
+    font-size: 13px;
+    padding: 10px 8px;
+    border-radius: 5px;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
 }
 
 a.active, a:hover {
-    background: #606a4c;
+    background: #5a7b18;
     transition: .5s;
     text-decoration: none;
 }
@@ -77,13 +84,13 @@ button.button-outline {
     display: none;
 }
 
-/* Home section */
+/* Home section----------------------- */
 .home-section{
    width: 100%;
    color: #ffaf02;
    text-align: center;
    padding: 100px 0;;
-   background: url(mandap.png) no-repeat center center / cover;
+   background: url(/images/mandap.png) no-repeat center center / cover;
    min-height: 100vh;
 }
 
@@ -105,7 +112,7 @@ button.button-outline {
     border: none;
     padding: 12px 34px;
     font-size: 15px;
-    margin-top: 10px;    /*prevent overlap*/
+    margin-top: 10px;    /*for preventing overlap*/
     background: transparent;
     cursor: pointer;
 }
@@ -117,17 +124,17 @@ button.button-outline {
     text-decoration: none;
 }
 
-/* Events Section */
+/* Events Section --------------------------------------*/
 .events-section {
     margin: 80px auto;
     width: 100%;
     padding: 0 20px;
 }
 
-.title {
+.event-title {
     text-align: center;
     font-size: 40px;
-    color: #b74b6b;
+    color:beige;
 }
 
 .line {
@@ -136,7 +143,7 @@ button.button-outline {
     background: #eed70a;
     margin: 5px auto;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .row {
@@ -153,7 +160,7 @@ button.button-outline {
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+
 }
 
 .events .row {
@@ -178,13 +185,13 @@ button.button-outline {
 }
 
 h4 {
-    font-size: 3vmin;
+    font-size: 20px;
     color: #eed70a;
     margin: 20px auto 0;
     text-align: center;
 }
 
-/* Gallery Section */
+/* Gallery Section--------------------------- */
 .gallery-section {
     padding: 80px 0;
     background: rgba(13, 73, 36, 0.9);
@@ -231,6 +238,124 @@ h4 {
     transition: transform 0.3s ease;
     cursor: pointer;
 }
+
+
+/*Our services----------------------*/
+
+
+.ourservices {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+.services{
+    margin-top: 20px;
+}
+
+.services h1 {
+  font-size: 40px;
+  margin-top: 45px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: beige;
+}
+
+
+.services p {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #a7ffd9;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.service-item {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #eed70a;
+}
+.explore-more {
+    margin-top: 2rem;
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #06320b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #897d0f;
+}
+
+
+
+/*Service extended------------------------------*/
+
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-category {
+  background: rgb(4, 34, 6);
+  border-radius: 10px;
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.service-category h2 {
+  color: #e8f80a;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 1rem;
+}
+
+.service-category ul {
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+.service-category li {
+  margin-bottom: 0.5rem;
+  color: #bdffd1;
+}
+
+
+
+
+
+
 
 /* About Us Section */
 .about {
@@ -360,7 +485,8 @@ h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Us Section */
+/* ---------------------Contact Us Section------------------------ */
+
 .contact-container {
     width: 85%;
     margin: 50px auto;
@@ -438,9 +564,9 @@ h4 {
 /* Footer */
 .end {
     text-align: center;
-    background-color: #176535;
-    padding: 30px 0;
-    margin-top: 50px;
+    background-color: #0b3d1e;
+    padding: 20px 0;
+    margin-top: 30px;
 }
 
 .end p {
@@ -463,7 +589,7 @@ h4 {
 
 .copyright {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 /* Dark Mode */
@@ -481,14 +607,14 @@ section.dark {
 }
 
 div.dark {
-    background-color: #1c1c1c;
+    background-color: #1d1b1b;
 }
 
 footer.dark {
     background-color: #1c1c1c;
 }
 .about.dark {
-    background-color: #1c1c1c;
+    background-color: #1d1b1b;
 }
 
 /* Login Page Specific */
@@ -537,6 +663,10 @@ footer.dark {
     transform: translateY(-50%);
     font-size: 20px;
     color: #fff;
+}
+.error-message {
+    color: #ff4444;
+    font-size: 10px;
 }
 
 .rem-forgot {
@@ -705,4 +835,33 @@ footer.dark {
     .wrapper h1 {
         font-size: 28px;
     }
+}
+
+
+@media (max-width: 480px) {
+  .services h1 {
+    font-size: 1.8rem;
+  }
+  .service-icon {
+    font-size: 2rem;
+  }
+      .explore-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 768px) {
+  .service-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-category {
+    width: 300px;
+    margin: 0;
+  }
 }
