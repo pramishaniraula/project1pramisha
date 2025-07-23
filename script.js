@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //form validation
-    const loginBtn = document.getElementById("login-btn"); // Changed selector to match your HTML
-
+    const loginBtn = document.getElementById("login-btn"); 
 if (loginBtn) {
     loginBtn.addEventListener("click", (e) => {
         e.preventDefault();
