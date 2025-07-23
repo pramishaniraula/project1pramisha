@@ -57,7 +57,7 @@ nav ul li a {
     transition: background-color 0.3s ease;
 }
 
-a.active, a:hover {
+.nav-links li a.active, a:hover {
     background: #5a7b18;
     transition: .5s;
     text-decoration: none;
@@ -193,12 +193,12 @@ h4 {
 
 /* Gallery Section--------------------------- */
 .gallery-section {
-    padding: 80px 0;
+    padding: 30px 0;
     background: rgba(13, 73, 36, 0.9);
 }
 
 .gallery-title {
-    font-size: 2.5rem;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
@@ -246,9 +246,9 @@ h4 {
 .ourservices {
   text-align: center;
   padding: 2rem 1rem;
-  max-width: 800px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  background-color: #06320b;
 }
 .services{
     margin-top: 20px;
@@ -300,7 +300,7 @@ h4 {
 
 .explore-btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 10px 10px;
     background-color: #06320b;
     color: white;
     text-decoration: none;
@@ -310,7 +310,7 @@ h4 {
 }
 
 .explore-btn:hover {
-    background-color: #897d0f;
+    background-color: #474211;
 }
 
 
@@ -324,6 +324,7 @@ h4 {
   align-items: center;
   gap: 20px;
   padding: 20px;
+  width: 100%;
 }
 
 .service-category {
@@ -373,7 +374,7 @@ h4 {
 
 .about p {
     font-size: 12px;
-    color: #60c120;
+    color: #fff700;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -558,23 +559,42 @@ h4 {
 }
 
 .contact button:hover {
-    background-color: #b1c626;
+    background-color: #66711a;
 }
 
 /* Footer */
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     background-color: #0b3d1e;
 }
 
+
+.end{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  color: black;
+}
+.end p{
+    margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fb-icon {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
 .fb-icon a {
-    color: #100606;
-    font-size: 24px;
-    margin-left: 8px;
-    transition: color 0.3s ease;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .fb-icon a:hover {
@@ -584,7 +604,53 @@ footer {
 
 
 
+
 /* Dark Mode */
+body.dark .line {
+    background: #ffffff;
+}
+nav.dark ul li a {
+    color: #f0f0f0;
+}
+.ourservices.dark,
+.services.dark {
+    background-color: #1c1c1c;
+}
+
+.gallery-section.dark {
+    background: #1c1c1c !important;
+}
+
+.about.dark {
+    background: linear-gradient(rgba(30, 30, 30, 0.8), rgba(30, 30, 30, 0.8)) !important;
+}
+
+.service-category.dark {
+    background: #121212 !important;
+}
+
+.service-item.dark h3 {
+    color: #f0f0f0 !important;
+}
+
+.services.dark p {
+    color: #ccc !important;
+}
+
+.about-section.dark {
+    background-color: #1c1c1c;
+}
+.about-content.dark p {
+    color: #f0f0f0 !important;
+}
+
+.events.dark {
+    background-color: #1c1c1c;
+}
+
+.event-title.dark h1, .events.dark h4 {
+    color: #f0f0f0 !important;
+}
 body.dark {
     background-color: #121212;
     color: #f0f0f0;
@@ -597,16 +663,16 @@ nav.dark {
 section.dark {
     background-color: #1c1c1c;
 }
+.gallery-section.dark {
+    background: #1c1c1c ;
+}
 
 div.dark {
-    background-color: #1d1b1b;
+    background-color: #1c1c1c;
 }
 
 footer.dark {
     background-color: #1c1c1c;
-}
-.about.dark {
-    background-color: #1d1b1b;
 }
 
 /* Login Page Specific */
@@ -757,6 +823,9 @@ footer.dark {
         transition: all 0.5s;
         z-index: 999;
     }
+    body.dark nav ul {
+        background: #1e1e1e;
+    }
     
     nav ul li {
         display: block;
@@ -836,6 +905,7 @@ footer.dark {
   }
   .service-icon {
     font-size: 2rem;
+    margin: 15px 0;
   }
       .explore-btn {
         padding: 0.7rem 1.5rem;
@@ -854,6 +924,13 @@ footer.dark {
   
   .service-category {
     width: 300px;
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  .end p {
+    flex-direction: column;
+    text-align: center;
     margin: 0;
   }
 }

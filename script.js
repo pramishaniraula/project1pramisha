@@ -1,30 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Theme toggle 
     const toggle = document.getElementById("themeToggle");
-    const body = document.body;
-    const nav = document.querySelector("nav");
-    const sections = document.querySelectorAll("section");
-    const divs = document.querySelectorAll("div");
-    const footer = document.querySelector("footer");
-    const gallerySection = document.querySelector(".gallery-section");
-    const about = document.querySelector(".about");
+    const elementsToToggle = [
+        document.body,
+        document.querySelector("nav"),
+        document.querySelector("footer"),
+        ...document.querySelectorAll("section, div")
+    ];
 
-    toggle.addEventListener("click", () => {
-        body.classList.toggle("dark");
-        nav.classList.toggle("dark");
-        footer.classList.toggle("dark");
-        gallerySection.classList.toggle("dark");
-        about.classList.toggle("dark");
-        
-        sections.forEach(section => section.classList.toggle("dark"));
-        divs.forEach(div => div.classList.toggle("dark"));
 
-        if (toggle.textContent === "🌙") {
-            toggle.textContent = "☀️"; 
-        } else {
-            toggle.textContent = "🌙"; 
-        }
-    });
+
+
+    
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        elementsToToggle.forEach(el => el?.classList.add("dark"));
+        if (toggle) toggle.textContent = "☀️";
+    } else {
+        elementsToToggle.forEach(el => el?.classList.remove("dark"));
+        if (toggle) toggle.textContent = "🌙";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            const isDark = document.body.classList.toggle("dark");
+            elementsToToggle.forEach(el => el?.classList.toggle("dark"));
+            toggle.textContent = isDark ? "☀️" : "🌙";
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    }
 
     //form validation
     const loginBtn = document.getElementById("login-btn"); 
@@ -44,11 +48,11 @@ if (loginBtn) {
             return;
         }
         if (password.length < 6) {
-            alert("Password must be at least 6 characters long!");
+            alert("Password must be at least of 6 characters !");
             return;
         }
         
-        alert("Login successful! Redirecting...");
+        alert("Login successful!");
         });
 }
 });
