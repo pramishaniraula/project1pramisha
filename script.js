@@ -9,53 +9,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const gallerySection = document.querySelector(".gallery-section");
     const about = document.querySelector(".about");
 
-    if (toggle) {
-        toggle.addEventListener("click", () => {
-            const isDark = !body.classList.contains("dark");
-            body.classList.toggle("dark");
-            nav?.classList.toggle("dark");
-            footer?.classList.toggle("dark");
-            gallerySection?.classList.toggle("dark");
-            about?.classList.toggle("dark");
-            
-            sections.forEach(section => section.classList.toggle("dark"));
-            divs.forEach(div => div.classList.toggle("dark"));
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        nav.classList.toggle("dark");
+        footer.classList.toggle("dark");
+        gallerySection.classList.toggle("dark");
+        about.classList.toggle("dark");
+        
+        sections.forEach(section => section.classList.toggle("dark"));
+        divs.forEach(div => div.classList.toggle("dark"));
 
-            toggle.textContent = isDark ? "☀️" : "🌙";
-        });
-    }
+        if (toggle.textContent === "🌙") {
+            toggle.textContent = "☀️"; 
+        } else {
+            toggle.textContent = "🌙"; 
+        }
+    });
 
     //form validation
-    const loginBtn = document.getElementById("login-btn");
-    if (loginBtn) {
-        loginBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            
-            const username = document.querySelector('input[type="email"]')?.value;
-            const password = document.querySelector('input[type="password"]')?.value;
-            
-             if (!username && !password) {
-                alert("Username and Password required!");
-                return;
-            }
-            }
-            else if (!username.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(username)) {
-                alert("Invalid Username!");
-                return;
-            }
-            else if (!password) {
-                alert("Password is required!");
-                return;
-            }
-                        
-           
-            
-            
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters!");
-                return;
-            }
-            alert("Login successful!");
+    const loginBtn = document.getElementById("login-btn"); // Changed selector to match your HTML
+
+if (loginBtn) {
+    loginBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const username = document.querySelector('input[type="email"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+
+        if (!username && !password) {
+            alert("Both username and password are required!");
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username)) {
+            alert("Please enter a valid email address!");
+            return;
+        }
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long!");
+            return;
+        }
+        
+        alert("Login successful! Redirecting...");
         });
-    }
+}
 });

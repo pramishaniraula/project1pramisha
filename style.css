@@ -90,7 +90,7 @@ button.button-outline {
    color: #ffaf02;
    text-align: center;
    padding: 100px 0;;
-   background: url(/images/mandap.png) no-repeat center center / cover;
+   background: url(/img/mandap.png) no-repeat center center / cover;
    min-height: 100vh;
 }
 
@@ -562,35 +562,27 @@ h4 {
 }
 
 /* Footer */
-.end {
-    text-align: center;
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
     background-color: #0b3d1e;
-    padding: 20px 0;
-    margin-top: 30px;
-}
-
-.end p {
-    color: #fff;
-    margin-bottom: 10px;
 }
 
 .fb-icon a {
     color: #100606;
     font-size: 24px;
-    margin: 0 10px;
+    margin-left: 8px;
     transition: color 0.3s ease;
 }
 
 .fb-icon a:hover {
     text-decoration: none;
     background-color: transparent;
-    color: #3b5998;
 }
 
-.copyright {
-    display: block;
-    margin-bottom: 5px;
-}
+
 
 /* Dark Mode */
 body.dark {
