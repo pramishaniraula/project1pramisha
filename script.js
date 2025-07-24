@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Theme toggle 
+    // dark mode toggle 
     const toggle = document.getElementById("themeToggle");
     const elementsToToggle = [
         document.body,
@@ -21,14 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (toggle) toggle.textContent = "🌙";
     }
 
-    if (toggle) {
-        toggle.addEventListener("click", () => {
-            const isDark = document.body.classList.toggle("dark");
-            elementsToToggle.forEach(el => el?.classList.toggle("dark"));
-            toggle.textContent = isDark ? "☀️" : "🌙";
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-        });
-    }
+// ...existing code...
+if (toggle) {
+    toggle.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark");
+        document.querySelector("nav")?.classList.toggle("dark");
+        document.querySelector("footer")?.classList.toggle("dark");
+        document.querySelectorAll("section").forEach(el => el.classList.toggle("dark"));
+        document.querySelectorAll("div").forEach(el => el.classList.toggle("dark"));
+        toggle.textContent = isDark ? "☀️" : "🌙";
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+}
+// ...existing code...
 
     //form validation
     const loginBtn = document.getElementById("login-btn"); 
