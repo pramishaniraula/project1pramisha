@@ -8,20 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ...document.querySelectorAll("section, div")
     ];
 
-
-
-
-    
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
         elementsToToggle.forEach(el => el?.classList.add("dark"));
         if (toggle) toggle.textContent = "☀️";
-    } else {
+    } else if{
         elementsToToggle.forEach(el => el?.classList.remove("dark"));
         if (toggle) toggle.textContent = "🌙";
+    }else{
+        localStorage.setItem("theme", "light");
+        if (toggle) toggle.textContent = "🌙";
+}
     }
 
-// ...existing code...
+
 if (toggle) {
     toggle.addEventListener("click", () => {
         const isDark = document.body.classList.toggle("dark");
@@ -33,7 +33,7 @@ if (toggle) {
         localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 }
-// ...existing code...
+
 
     //form validation
     const loginBtn = document.getElementById("login-btn"); 
@@ -43,17 +43,26 @@ if (loginBtn) {
 
         const username = document.querySelector('input[type="email"]').value;
         const password = document.querySelector('input[type="password"]').value;
+        const errorMessage = document.querySelector(".error-message");
 
         if (!username && !password) {
-            alert("Both username and password are required!");
+            errorMessage.textContent = "Please enter your email and password!";
+            return;
+        }
+        if (!username) {
+            errorMessage.textContent = "Please enter your email!";
             return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username)) {
-            alert("Please enter a valid email address!");
+           errorMessage.textContent = "Please enter a valid email!";
+            return;
+        }
+        if (!password) {
+            errorMessage.textContent = "Please enter your password!";
             return;
         }
         if (password.length < 6) {
-            alert("Password must be at least of 6 characters !");
+            errorMessage.textContent = "Password must be at least 6 characters long!";
             return;
         }
         
