@@ -588,13 +588,13 @@ main, .service-content, .wrapper {
 /* Footer */
 footer {
     padding: 10px;
-    background-color: #98e8ee;
+    background-color: #cff0f4;
 }
 
-
 .end{
+    padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   margin: 0;

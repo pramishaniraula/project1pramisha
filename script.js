@@ -56,8 +56,7 @@ if (loginBtn) {
             errorMessage.textContent = "Password must be at least 6 characters long!";
             return;
         }
-        
-        alert("Login successful!");
+        window.location.href = "index.html"; 
         });
 }
 });
