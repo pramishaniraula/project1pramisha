@@ -7,22 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("footer"),
         ...document.querySelectorAll("section, div")
     ];
-
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
         elementsToToggle.forEach(el => el?.classList.add("dark"));
         if (toggle) toggle.textContent = "☀️";
-    } else if{
+    } else {
         elementsToToggle.forEach(el => el?.classList.remove("dark"));
         if (toggle) toggle.textContent = "🌙";
-    }else{
-        localStorage.setItem("theme", "light");
-        if (toggle) toggle.textContent = "🌙";
-}
     }
-
-
-if (toggle) {
+    if (toggle) {
     toggle.addEventListener("click", () => {
         const isDark = document.body.classList.toggle("dark");
         document.querySelector("nav")?.classList.toggle("dark");
@@ -33,8 +26,6 @@ if (toggle) {
         localStorage.setItem("theme", isDark ? "dark" : "light");
     });
 }
-
-
     //form validation
     const loginBtn = document.getElementById("login-btn"); 
 if (loginBtn) {
