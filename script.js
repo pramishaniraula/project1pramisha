@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle.textContent = isDark ? "☀️" : "🌙";
         localStorage.setItem("theme", isDark ? "dark" : "light");
     });
-}
+    }
     //form validation
     const loginBtn = document.getElementById("login-btn"); 
-if (loginBtn) {
+    if (loginBtn) {
     loginBtn.addEventListener("click", (e) => {
         e.preventDefault();
 
