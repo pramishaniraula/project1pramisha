@@ -11,7 +11,7 @@ header{
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #98e8ee;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -752,7 +752,9 @@ body.dark .input-box input {
 
 body.dark .login-btn {
     background: #444 ;
-    color: #ffe100 ;
+}
+body.dark .login-btn a {
+    color: #bcc553 ;
 }
 body.dark .contact input,
 body.dark .contact textarea {
@@ -840,19 +842,21 @@ span.error-message {
 .login-btn {
     width: 100%;
     height: 45px;
-    background: #2dc7b8;
+    background: #708d8a;
     border: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(211, 213, 199, 0.1);
     cursor: pointer;
     font-size: 16px;
-    color: #400101;
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
-
+.login-btn a {
+    color:#400101 ;
+    text-decoration: none;
+}
 .login-btn:hover {
-    background-color: #629fa7;
+    background-color: #04424b;
 }
 
 .register-link {
